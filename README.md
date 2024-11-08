@@ -1,7 +1,5 @@
 <a id="readme-top"></a>
 
-- 简体中文
-
 <!-- 项目 LOGO -->
 <br />
 <div align="center">
@@ -24,9 +22,10 @@
   <summary>目录</summary>
   <ol>
     <li>
-      <a href="#about-the-project">关于项目</a>
+      <a href="#关于项目">关于项目</a>
     </li>
-    <li><a href="#roadmap">路线图</a></li>
+    <li><a href="#路线图">路线图</a></li>
+    <li><a href="#许可证">许可证</a></li>
   </ol>
 </details>
 
@@ -35,18 +34,27 @@
 <!-- 关于项目 -->
 ## 关于项目
 
-[![产品名称屏幕截图][product-screenshot]](/images/product-screenshot)
+[![网站截图][product-screenshot.jpeg]](/images/product-screenshot.jpeg)
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
 
 
-<!-- ROADMAP -->
+<!-- 路线图 -->
 ## 路线图
 
 - [ ] 显示时间
 
 有关建议功能（和已知问题）的完整列表，请参阅 [开启的问题](https://github.com/PhantomPixel-0418/MyHomePage/issues)。
+
+<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
+
+
+
+<!-- 许可证 -->
+## 许可证
+
+以 MIT 许可发布。更多信息请参见 `LICENSE.txt`。
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
