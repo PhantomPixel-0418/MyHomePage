@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <style>
+        body {
+            background-image: url('https://bing.img.run/1920x1080.php');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+        .quote {
+            margin-top: 20px;
+            font-size: 1.5em;
+            line-height: 1.6;
+            color: #ffdf5e;
+        }
+        .quote-author {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #dddddd;
+        }
+        .copyright {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        // Fetch quote from API
+        fetch('https://v1.jinrishici.com/all.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('quote').innerText = data.content;
+                document.getElementById('quote-author').innerText = '——' + data.author + '《' + data.origin + '》';
+            })
+            .catch(error => {
+                console.error('Error fetching quote:', error);
+            });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎来到我的个人主页</h1>
+        <div class="quote" id="quote">名言加载中...</div>
+        <div class="quote-author" id="quote-author"></div>
+    </div>
+    <div class="copyright">
+        图片来源: © Bing
+    </div>
+</body>
+</html>
