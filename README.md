@@ -34,7 +34,11 @@
 <!-- 关于项目 -->
 ## 关于项目
 
-[![网站截图][product-screenshot.jpeg]](/images/product-screenshot.jpeg)
+[点击进入](https://phantompixel.pages.dev/)
+
+
+<a href="https://github.com/PhantomPixel-0418/MyHomePage">
+    <img src="images/product-screenshot.jpeg" alt="网站截图">
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
