@@ -8,7 +8,12 @@
     <style>
         @font-face {
             font-family: 'HarmonyOS Sans';
-            src: url('HarmonyOS_Sans_SC_Medium.ttf') format('truetype');
+            src: url('fonts/HarmonyOS_Sans_SC_Medium.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'AlimamaDongFangDaKai';
+            src: url('fonts/AlimamaDongFangDaKai-Regular.ttf') format('truetype');
         }
 
         body {
@@ -37,7 +42,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
@@ -51,27 +55,42 @@
             line-height: 1.5;
         }
 
+        .quote-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            color: #ffffff;
+            font-family: 'HarmonyOS Sans';
+            text-align: left;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .quote-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 20px;
+            background-color: #ffffff;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
         .quote {
             font-size: 1.5em;
             color: #ffdf5e;
             line-height: 1.6;
+            font-family: 'AlimamaDongFangDaKai';
+            text-align: center;
         }
 
         .quote-author {
             margin-top: 10px;
             font-size: 1.2em;
             color: #dddddd;
-        }
-
-        .copyright {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 12px;
-            color: #ffffff;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            border-radius: 5px;
+            font-family: 'AlimamaDongFangDaKai';
+            text-align: right;
+            width: 100%;
         }
     </style>
     <script>
@@ -85,8 +104,7 @@
                 .then(data => {
                     currentDateTime = new Date(data.datetime);
                     displayTime(); // Display immediately on first load
-                    // Start local clock update
-                    setInterval(updateLocalTime, 1000);
+                    setInterval(updateLocalTime, 1000); // Start local clock update
                 })
                 .catch(error => {
                     console.error('Error fetching time:', error);
@@ -136,14 +154,10 @@
 
         <!-- Quote Display Box -->
         <div class="box">
+            <div class="quote-title">名言古句</div>
             <div class="quote" id="quote">名言加载中...</div>
             <div class="quote-author" id="quote-author"></div>
         </div>
-    </div>
-
-    <div class="copyright">
-        图片来源: © <a href="https://cn.bing.com" target="_blank" style="color: #ffffff;">Bing</a> | 古诗句来源: 古诗词·<a
-            href="https://gushi.ci" target="_blank" style="color: #ffffff;">一言API</a>
     </div>
 
     <!-- Cloudflare Web Analytics -->
