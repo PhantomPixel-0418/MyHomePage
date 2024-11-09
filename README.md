@@ -34,9 +34,7 @@
 <!-- 关于项目 -->
 ## 关于项目
 
-[点击进入](https://phantompixel.pages.dev/)
-
-
+`1.0.0` 网站截图
 <a href="https://github.com/PhantomPixel-0418/MyHomePage">
     <img src="images/product-screenshot.jpeg" alt="网站截图">
 
@@ -48,6 +46,9 @@
 ## 路线图
 
 - [ ] 显示时间
+  - [ ] 日期
+- [ ] 天气信息
+  - [ ] 气候提示
 
 有关建议功能（和已知问题）的完整列表，请参阅 [开启的问题](https://github.com/PhantomPixel-0418/MyHomePage/issues)。
 
@@ -58,7 +59,7 @@
 <!-- 许可证 -->
 ## 许可证
 
-以 MIT 许可发布。更多信息请参见 `LICENSE.txt`。
+以 MIT 许可发布。更多信息请参见 [`LICENSE.txt`](LICENSE)。
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
