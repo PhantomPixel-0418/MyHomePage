@@ -35,7 +35,9 @@
 <!-- 关于项目 -->
 ## 关于项目
 
-`1.0.0` 网站截图
+最新版本 `1.0.1` 更新日志
+
+网站截图
 <a href="https://github.com/PhantomPixel-0418/MyHomePage">
     <img src="images/product-screenshot.jpeg" alt="网站截图">
 

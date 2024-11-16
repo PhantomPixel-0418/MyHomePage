@@ -7,10 +7,13 @@
     <title>个人主页</title>
     <style>
         @font-face {
-            font-family: 'HarmonyOS Sans SC';
-            src: url('HarmonyOS_Sans_SC_Medium.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
+            font-family: 'HarmonyOS Sans SC Medium';
+            src: url('fonts/HarmonyOS_Sans_SC_Medium.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Rousseau Deco';
+            src: url('fonts/Rousseau-Deco.ttf') format('truetype');
         }
 
         body {
@@ -18,7 +21,7 @@
             background-size: cover;
             background-position: center;
             color: #ffffff;
-            font-family: 'HarmonyOS Sans SC', sans-serif;
+            font-family: 'HarmonyOS Sans SC Medium', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -29,115 +32,133 @@
 
         .container {
             display: flex;
-            justify-content: space-between;
             align-items: stretch;
-            padding: 20px;
+            gap: 20px;
             background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
             border-radius: 10px;
-            width: 90%;
-            max-width: 800px;
-            min-height: 150px;
-            box-sizing: border-box;
         }
 
         .time-box,
         .quote-box {
-            flex: 1;
-            min-width: 150px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            margin: 0 10px;
-            color: #ffffff;
-            box-sizing: border-box;
             padding: 20px;
+            border-radius: 10px;
+            color: #ffdf5e;
         }
 
         .time-box {
-            font-size: 1.2em;
-            line-height: 1.4;
+            background-color: rgba(0, 0, 0, 0.7);
             text-align: center;
+            width: 250px;
+            font-family: 'HarmonyOS Sans SC Medium';
+            color: #ffffff;
+            position: relative;
         }
 
-        .time-box div {
-            margin: 5px 0;
+        .time-header {
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .time-header::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 20px;
+            background-color: #ffffff;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        .time {
+            font-size: 2.5em;
+            font-family: 'Rousseau Deco';
+            margin-top: 30px;
+        }
+
+        .date {
+            font-size: 1em;
+            margin-top: 10px;
         }
 
         .quote-box {
-            font-size: 1.2em;
+            background-color: rgba(0, 0, 0, 0.6);
             color: #ffdf5e;
-            text-align: left;
-            white-space: normal;
-            overflow-wrap: break-word;
+            font-size: 1.2em;
+            line-height: 1.4;
+            flex-grow: 1;
         }
 
         .quote-author {
-            margin-top: 10px;
             font-size: 1em;
             color: #dddddd;
+            margin-top: 10px;
         }
     </style>
+
     <script>
-        // 重试机制的时间获取函数
-        function fetchTimeWithRetry(retryDelay = 5000) {
+        let currentTime = null;
+
+        // Fetch current time from World Time API
+        function fetchTimeFromAPI() {
             fetch('https://worldtimeapi.org/api/ip')
                 .then(response => response.json())
                 .then(data => {
-                    let datetime = new Date(data.datetime);
-                    updateTime(datetime);
-
-                    // 每秒更新一次时间
-                    setInterval(() => {
-                        datetime.setSeconds(datetime.getSeconds() + 1);
-                        updateTime(datetime);
-                    }, 1000);
+                    currentTime = new Date(data.datetime);
+                    updateClock(); // Display time immediately
                 })
                 .catch(error => {
-                    console.error('Error fetching time, retrying...', error);
-                    setTimeout(() => fetchTimeWithRetry(retryDelay), retryDelay); // 在指定时间后重试
+                    console.error('Error fetching time from API:', error);
+                    // Retry fetching time after a delay
+                    setTimeout(fetchTimeFromAPI, 5000);
                 });
         }
 
-        function updateTime(datetime) {
-            let hours = String(datetime.getHours()).padStart(2, '0');
-            let minutes = String(datetime.getMinutes()).padStart(2, '0');
-            let seconds = String(datetime.getSeconds()).padStart(2, '0');
-            document.getElementById('time').innerText = `${hours}:${minutes}:${seconds}`;
+        // Update the clock and date locally
+        function updateClock() {
+            if (currentTime) {
+                currentTime.setSeconds(currentTime.getSeconds() + 1); // Increment time by one second
+                const hours = String(currentTime.getHours()).padStart(2, '0');
+                const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+                const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+                const dateString = currentTime.toLocaleDateString('zh-CN', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    weekday: 'long'
+                }).replace(/,\s*/g, ' '); // Add a space between date and weekday
 
-            // 显示日期和星期
-            let year = datetime.getFullYear();
-            let month = String(datetime.getMonth() + 1).padStart(2, '0');
-            let day = String(datetime.getDate()).padStart(2, '0');
-            let weekDays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-            let weekDay = weekDays[datetime.getDay()];
-            document.getElementById('date').innerText = `${year}年${month}月${day}日 ${weekDay}`;
+                document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
+                document.getElementById('date').textContent = dateString;
+
+                // Update every second
+                setTimeout(updateClock, 1000);
+            }
         }
 
-        // Fetch quote from API
-        fetch('https://v1.jinrishici.com/all.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('quote').innerText = data.content;
-                document.getElementById('quote-author').innerText = '——' + data.author + '《' + data.origin + '》';
-            })
-            .catch(error => console.error('Error fetching quote:', error));
-
-        // Initialize time display on page load with retry mechanism
-        window.onload = () => fetchTimeWithRetry();
+        // On window load, fetch time from API
+        window.onload = function () {
+            fetchTimeFromAPI();
+        };
     </script>
 </head>
 
 <body>
     <div class="container">
         <div class="time-box">
-            <div>当前时间</div>
-            <div id="time">加载中...</div>
-            <div id="date">日期加载中...</div>
+            <div class="time-header">当前时间</div>
+            <div class="time" id="time">加载中...</div>
+            <div class="date" id="date"></div>
         </div>
         <div class="quote-box">
-            <div id="quote">名言加载中...</div>
+            <div class="quote" id="quote">名言加载中...</div>
             <div class="quote-author" id="quote-author"></div>
         </div>
     </div>
