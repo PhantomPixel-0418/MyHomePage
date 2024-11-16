@@ -126,13 +126,13 @@
 
 <!-- 标记链接和图像 -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[投稿人包庇]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[投稿人包庇]: https://img.shields.io/github/contributors/PhantomPixel-0418/MyHomePage.svg?style=for-the-badge
 [贡献者网址]: https://github.com/PhantomPixel-0418/MyHomePage/graphs/contributors
-[分叉包庇]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[分叉包庇]: https://img.shields.io/github/forks/PhantomPixel-0418/MyHomePage.svg?style=for-the-badge
 [分叉网址]: https://github.com/PhantomPixel-0418/MyHomePage/network/members
-[星标包庇]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[星标包庇]: https://img.shields.io/github/stars/PhantomPixel-0418/MyHomePage.svg?style=for-the-badge
 [星标网址]: https://github.com/PhantomPixel-0418/MyHomePage/stargazers
-[问题包庇]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[问题包庇]: https://img.shields.io/github/issues/PhantomPixel-0418/MyHomePage.svg?style=for-the-badge
 [问题网址]: https://github.com/PhantomPixel-0418/MyHomePage/issues
-[许可证包庇]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[许可证包庇]: https://img.shields.io/github/license/PhantomPixel-0418/MyHomePage.svg?style=for-the-badge
 [许可证网址]: https://github.com/PhantomPixel-0418/MyHomePage/blob/master/LICENSE.txt
