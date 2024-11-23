@@ -5,194 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人主页</title>
-    <link rel="icon" href="/images/logo.png" type="image/png">
-    <style>
-        @font-face {
-            font-family: 'HarmonyOS Sans SC Medium';
-            src: url('fonts/HarmonyOS_Sans_SC_Medium.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: 'Rousseau Deco';
-            src: url('fonts/Rousseau-Deco.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: 'Alimama DongFangDaKai';
-            src: url('fonts/AlimamaDongFangDaKai-Regular.ttf') format('truetype');
-        }
-
-        body {
-            background-image: url('https://bing.img.run/1920x1080.php');
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
-            font-family: 'HarmonyOS Sans SC Medium', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            display: flex;
-            align-items: stretch;
-            gap: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .time-box,
-        .quote-box {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .time-box {
-            background-color: rgba(0, 0, 0, 0.7);
-            text-align: center;
-            width: 250px;
-            color: #ffffff;
-            position: relative;
-        }
-
-        .quote-box {
-            background-color: rgba(0, 0, 0, 0.6);
-            color: #ffffff;
-            flex-grow: 1;
-            position: relative;
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            font-size: 1.2em;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .header::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 20px;
-            background-color: #ffffff;
-            margin-right: 8px;
-            border-radius: 2px;
-        }
-
-        .time {
-            font-size: 2.5em;
-            font-family: 'Rousseau Deco';
-            margin-top: 30px;
-        }
-
-        .date {
-            font-size: 1em;
-            margin-top: 10px;
-        }
-
-        .quote {
-            font-size: 1.5em;
-            font-family: 'Alimama DongFangDaKai';
-            margin: 50px 0 10px;
-            text-align: left;
-        }
-
-        .quote-author {
-            font-size: 1em;
-            font-family: 'Alimama DongFangDaKai';
-            color: #dddddd;
-            text-align: right;
-        }
-    </style>
-
-    <script>
-        let currentTime = null;
-
-        // Fetch current time from World Time API
-        function fetchTimeFromAPI() {
-            fetch('https://worldtimeapi.org/api/ip')
-                .then(response => response.json())
-                .then(data => {
-                    currentTime = new Date(data.datetime);
-                    updateClock(); // Display time immediately
-                })
-                .catch(error => {
-                    console.error('Error fetching time from API:', error);
-                    // Retry fetching time after a delay
-                    setTimeout(fetchTimeFromAPI, 5000);
-                });
-        }
-
-        // Update the clock and date locally
-        function updateClock() {
-            if (currentTime) {
-                currentTime.setSeconds(currentTime.getSeconds() + 1); // Increment time by one second
-                const hours = String(currentTime.getHours()).padStart(2, '0');
-                const minutes = String(currentTime.getMinutes()).padStart(2, '0');
-                const seconds = String(currentTime.getSeconds()).padStart(2, '0');
-                const dateString = currentTime.toLocaleDateString('zh-CN', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    weekday: 'long'
-                }).replace(/,\s*/g, ' '); // Add a space between date and weekday
-
-                document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
-                document.getElementById('date').textContent = dateString;
-
-                // Update every second
-                setTimeout(updateClock, 1000);
-            }
-        }
-
-        // Fetch quote from API
-        function fetchQuote() {
-            fetch('https://v1.jinrishici.com/all.json')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('quote').innerText = data.content;
-                    document.getElementById('quote-author').innerText = `——${data.author}《${data.origin}》`;
-                })
-                .catch(error => {
-                    console.error('Error fetching quote:', error);
-                });
-        }
-
-        // On window load, fetch time from API
-        window.onload = function () {
-            fetchTimeFromAPI();
-            fetchQuote();
-        };
-    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="time-box">
-            <div class="header">当前时间</div>
-            <div class="time" id="time">加载中...</div>
-            <div class="date" id="date"></div>
+    <div class="background">
+        <!-- 图片详情按钮 -->
+        <div id="image-info" class="image-info hidden">
+            <img src="images/picture_2.svg" alt="图片图标">
+            <span>图片详情</span>
         </div>
-        <div class="quote-box">
-            <div class="header">名言古句</div>
-            <div class="quote" id="quote">名言加载中...</div>
-            <div class="quote-author" id="quote-author"></div>
+
+        <!-- 时间与名言 -->
+        <div class="info-container">
+            <div class="time-box">
+                <div class="time-icon">
+                    <img src="images/calendar_badge_clock.svg" alt="时间图标">
+                </div>
+                <div class="time-info">
+                    <div class="label" id="time-label">当前时间</div>
+                    <div id="time">加载中...</div>
+                    <div id="date"></div>
+                </div>
+            </div>
+            <div class="quote-box">
+                <div class="quote-icon">
+                    <img src="images/book_pages_fill_1.svg" alt="名言图标">
+                </div>
+                <div class="quote-info">
+                    <div class="label" id="quote-label">名言名句</div>
+                    <div id="quote">名言加载中...</div>
+                    <div id="quote-author"></div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Cloudflare Web Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-        data-cf-beacon='{"token": "89402c50f93d48e09fd342aa1012ed22"}'></script>
-    <!-- End Cloudflare Web Analytics -->
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,135 @@
+@font-face {
+    font-family: "Rousseau-Deco";
+    src: url("fonts/Rousseau-Deco.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "AlimamaDongFangDaKai-Regular";
+    src: url("fonts/AlimamaDongFangDaKai-Regular.ttf") format("truetype");
+}
+
+/* 全局样式 */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: "HarmonyOS Sans SC", "Roboto", sans-serif;
+    background: #000;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 背景图片 */
+.background {
+    background-image: url('https://cn.bing.com/th?id=OHR.FibonacciAloe_ZH-CN8974137481_UHD.jpg&w=4096');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* 图片详情按钮 */
+.image-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-info img {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+.image-info.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.image-info:hover {
+    opacity: 1;
+}
+
+/* 信息容器 */
+.info-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 时间与名言框样式 */
+.time-box,
+.quote-box {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    width: 350px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.time-box:hover,
+.quote-box:hover {
+    transform: scale(1.05);
+}
+
+.time-box .time-icon,
+.quote-box .quote-icon {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.time-box .time-icon img,
+.quote-box .quote-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+/* 时间字体 */
+#time {
+    font-size: 36px;
+    font-family: "Rousseau-Deco", sans-serif;
+    /* 使用时间字体 */
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+#date {
+    font-size: 16px;
+    font-family: "HarmonyOS Sans SC", "Roboto", sans-serif;
+}
+
+/* 名言字体 */
+#quote {
+    font-size: 24px;
+    font-family: "AlimamaDongFangDaKai-Regular", sans-serif;
+    /* 使用名言字体 */
+    margin-top: 5px;
+}
+
+#quote-author {
+    font-size: 16px;
+    font-family: "HarmonyOS Sans SC", "Roboto", sans-serif;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}

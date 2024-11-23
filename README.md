@@ -105,7 +105,7 @@
 1. **HarmonyOS Sans SC**
    - **描述**: 华为开发的 HarmonyOS Sans 字体，为网页提供清晰、简洁的中文显示效果。  
    - **用途**: 网页主要字体，确保内容风格统一和视觉优雅。  
-   - **来源**: [华为官网](https://developer.huawei.com/consumer/cn/)。
+   - **来源**: [华为官网](https://developer.huawei.com/consumer/cn/design/resource/)。
 
 2. **Rousseau Deco**
    - **描述**: 一种用于特殊显示的艺术字体，用于页面的时间显示部分，增添艺术感。  
