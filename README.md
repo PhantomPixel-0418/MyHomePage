@@ -82,40 +82,41 @@
 
 
 
-## 致谢
+### 致谢
 
-以下是网页中使用到的资源和技术致谢列表：
+以下是网页中使用到的资源和接口列表：
 
-#### 使用到的 API：
+#### SVG 图像来源
+- [HarmonyOS 主题图标库](https://developer.huawei.com/consumer/cn/design/harmonyos-symbol/HarmonyOS)  
+  描述：由华为开发者联盟提供的图标素材，设计简洁现代，适用于网页的装饰和功能指示。
 
-1. **世界时间 API**
-   - **接口地址**: [http://worldtimeapi.org/api/ip](http://worldtimeapi.org/api/ip)  
-   - **描述**: 此 API 根据用户的 IP 地址获取当前时间和时区信息，确保时间的精准性。  
-   - **用途**: 在页面加载时获取准确的初始时间，并通过本地脚本每秒更新时间显示。  
+#### 世界时间 API
+- **接口地址**：`http://worldtimeapi.org/api/ip`  
+  描述：此 API 根据用户的 IP 地址获取当前时间和时区信息，确保时间的准确性。  
+  用途：在页面加载时获取准确的初始时间，之后每秒通过本地更新。
 
-2. **今日诗词 API**
-   - **接口地址**: [https://v1.jinrishici.com/all.json](https://v1.jinrishici.com/all.json)  
-   - **描述**: 提供随机的经典诗词名句，包括作者和出处。  
-   - **用途**: 动态加载名言古句，为网页增加文化气息和激励效果。
+#### 今日诗词 API
+- **接口地址**：`https://v1.jinrishici.com/all.json`  
+  描述：提供随机的经典诗词名句，包括作者和出处。  
+  用途：在网页上显示每日一言的内容，作为网页上的激励语句。
 
----
+#### 新的 Bing 壁纸接口
+- **接口地址**：`https://api.vvhan.com/article/bing.html`  
+  描述：此 API 提供每日 Bing 壁纸及其详细信息，包括标题和日期等。  
+  用途：用于动态显示网页背景图片，并提供图片的相关描述。
 
-#### 使用到的字体：
+#### 字体来源
+1. **Rousseau Deco**  
+   描述：用户指定用于显示时间的艺术字体，提升网页视觉美感。
+2. **Alimama DongFang DaKai Regular**  
+   描述：用户指定用于显示名言名句的字体，风格简洁，传递优雅氛围。
+3. **HarmonyOS Sans**  
+   描述：网页默认字体，保持整体风格一致性，由华为开发者联盟提供。  
+   来源：[HarmonyOS Sans 字体下载](https://developer.huawei.com/consumer/cn/doc/development/graphics-Guides/fonts-0000001050731439)
 
-1. **HarmonyOS Sans SC**
-   - **描述**: 华为开发的 HarmonyOS Sans 字体，为网页提供清晰、简洁的中文显示效果。  
-   - **用途**: 网页主要字体，确保内容风格统一和视觉优雅。  
-   - **来源**: [华为官网](https://developer.huawei.com/consumer/cn/design/resource/)。
+<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
-2. **Rousseau Deco**
-   - **描述**: 一种用于特殊显示的艺术字体，用于页面的时间显示部分，增添艺术感。  
-   - **用途**: 时钟部分字体。
 
-3. **Alimama DongFangDaKai**
-   - **描述**: 阿里巴巴出品的东方大楷字体，适合中国传统文化表达。  
-   - **用途**: 用于“名言古句”部分，增强经典韵味。
-
----
 
 #### 其他致谢：
 感谢 Cloudflare 提供的 **Web Analytics** 工具，用于统计网站访问流量和分析用户行为。
