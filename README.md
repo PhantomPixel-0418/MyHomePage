@@ -1,10 +1,5 @@
 <a id="readme-top"></a>
 
-[![贡献者][投稿人包庇]][贡献者网址]
-[![分叉][分叉包庇]][分叉网址]
-[![星标][星标包庇]][星标网址]
-[![问题][问题包庇]][问题网址]
-[![MIT 许可证][许可证包庇]][许可证网址]
 
 <!-- 项目 LOGO -->
 <br />
@@ -17,9 +12,16 @@
 
   <p align="center">
     我的个人主页<br />属于自己的小破站~
-    <br />
+  </p>
+
+  [![贡献者][投稿人包庇]][贡献者网址]
+  [![分叉][分叉包庇]][分叉网址]
+  [![星标][星标包庇]][星标网址]
+  [![问题][问题包庇]][问题网址]
+  [![MIT 许可证][许可证包庇]][许可证网址]
+
+  <p align="center">
     <a href="https://phantompixel.pages.dev"><strong>前往查看 »</strong></a>
-    <br />
     <br />
         <a href="https://github.com/PhantomPixel-0418/MyHomePage/issues/new?labels=bug&template=bug-report---.md">报告错误</a>
     ·
@@ -126,13 +128,14 @@
 
 <!-- 标记链接和图像 -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[投稿人包庇]: https://img.shields.io/github/contributors/PhantomPixel-0418/MyHomePage.svg?style=for-the-badge
+
+[投稿人包庇]: https://img.shields.io/github/contributors/PhantomPixel-0418/MyHomePage.svg
 [贡献者网址]: https://github.com/PhantomPixel-0418/MyHomePage/graphs/contributors
-[分叉包庇]: https://img.shields.io/github/forks/PhantomPixel-0418/MyHomePage.svg?style=for-the-badge
+[分叉包庇]: https://img.shields.io/github/forks/PhantomPixel-0418/MyHomePage.svg?style
 [分叉网址]: https://github.com/PhantomPixel-0418/MyHomePage/network/members
-[星标包庇]: https://img.shields.io/github/stars/PhantomPixel-0418/MyHomePage.svg?style=for-the-badge
+[星标包庇]: https://img.shields.io/github/stars/PhantomPixel-0418/MyHomePage.svg?style
 [星标网址]: https://github.com/PhantomPixel-0418/MyHomePage/stargazers
-[问题包庇]: https://img.shields.io/github/issues/PhantomPixel-0418/MyHomePage.svg?style=for-the-badge
+[问题包庇]: https://img.shields.io/github/issues/PhantomPixel-0418/MyHomePage.svg
 [问题网址]: https://github.com/PhantomPixel-0418/MyHomePage/issues
-[许可证包庇]: https://img.shields.io/github/license/PhantomPixel-0418/MyHomePage.svg?style=for-the-badge
+[许可证包庇]: https://img.shields.io/github/license/PhantomPixel-0418/MyHomePage.svg
 [许可证网址]: https://github.com/PhantomPixel-0418/MyHomePage/blob/master/LICENSE.txt
