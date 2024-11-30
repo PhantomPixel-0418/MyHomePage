@@ -1,6 +1,5 @@
 <a id="readme-top"></a>
 
-
 <!-- 项目 LOGO -->
 <br />
 <div align="center">
@@ -29,8 +28,6 @@
   </p>
 </div>
 
-
-
 <!-- 目录 -->
 <details>
   <summary>目录</summary>
@@ -44,18 +41,12 @@
   </ol>
 </details>
 
-
-
 <!-- 关于项目 -->
 ## 关于项目
 
-网站截图
-<a href="https://github.com/PhantomPixel-0418/MyHomePage">
-    <img src="images/product-screenshot.jpeg" alt="网站截图">
-
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
-
+这是一个用于展示个人主页的项目，旨在提供简单而美观的网页布局。通过整合 Bing 每日壁纸、经典诗词、时钟以及一些自定义功能，本网页旨在提供每日一图、一言，提升用户体验。
 
 <!-- 路线图 -->
 ## 路线图
@@ -71,16 +62,12 @@
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
-
-
 <!-- 许可证 -->
 ## 许可证
 
 以 MIT 许可发布。更多信息请参见 [`LICENSE.txt`](LICENSE)。
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
-
-
 
 ### 致谢
 
@@ -116,16 +103,12 @@
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
-
-
 #### 其他致谢：
 感谢 Cloudflare 提供的 **Web Analytics** 工具，用于统计网站访问流量和分析用户行为。
 
 感谢 Best-README-Template 提供的 **自述文件模版**，用于更方便地编写自述文件。
 
 <p align="right">(<a herf="#readme-top">返回顶部</a>)</p>
-
-
 
 <!-- 标记链接和图像 -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
