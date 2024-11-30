@@ -49,15 +49,33 @@ function fetchQuote() {
         });
 }
 
+// 刷新每日一图
+function refreshDailyImage() {
+    fetch('https://api.vvhan.com/api/bing?type=json')
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to refresh image');
+            return response.json();
+        })
+        .then(data => {
+            document.querySelector('.background').style.backgroundImage = `url(${data.data.url})`;
+            alert('每日一图已刷新！');
+        })
+        .catch(error => {
+            console.error('Error refreshing daily image:', error);
+            alert('刷新失败，请稍后再试！');
+        });
+}
+
 // 图片详情逻辑
 function fetchImageDetails() {
+    const imageInfo = document.getElementById('image-info');
+    imageInfo.innerHTML = `<span>加载中...</span>`;
     fetch('https://api.vvhan.com/api/bing?type=json')
         .then(response => {
             if (!response.ok) throw new Error('Failed to fetch image details');
             return response.json();
         })
         .then(data => {
-            const imageInfo = document.getElementById('image-info');
             imageInfo.innerHTML = `
                 <img src="images/picture_2.svg" alt="图片图标">
                 <span>${data.data.title}</span>
@@ -65,12 +83,20 @@ function fetchImageDetails() {
         })
         .catch(error => {
             console.error('Error fetching image details:', error);
+            imageInfo.innerHTML = `<span>加载失败，请稍后再试</span>`;
         });
 }
+
+// 更新时间按钮绑定点击事件
+document.getElementById('refresh-time').addEventListener('click', () => {
+    fetchTimeFromAPI(); // 调用时间 API 刷新时间
+    alert('时间已更新！'); // 提示用户时间已更新
+});
 
 // 初始化
 window.onload = function () {
     fetchTimeFromAPI();
     fetchQuote();
     fetchImageDetails();
+    document.getElementById('refresh-image').addEventListener('click', refreshDailyImage);
 };
