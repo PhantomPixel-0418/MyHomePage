@@ -58,20 +58,37 @@ function fetchQuote() {
         });
 }
 
-// 刷新每日一图
-function refreshDailyImage() {
-    fetch('https://api.vvhan.com/api/bing?type=json')
+// 随机每日一图
+function randomDailyImage() {
+    fetch('https://api.vvhan.com/api/bing?type=json&rand=sj')
         .then(response => {
-            if (!response.ok) throw new Error('Failed to refresh image');
+            if (!response.ok) throw new Error('Failed to fetch random image');
             return response.json();
         })
         .then(data => {
             document.querySelector('.background').style.backgroundImage = `url(${data.data.url})`;
-            alert('每日一图已刷新！');
+            alert('已切换至随机每日一图！');
         })
         .catch(error => {
-            console.error('Error refreshing daily image:', error);
-            alert('刷新失败，请稍后再试！');
+            console.error('Error fetching random image:', error);
+            alert('加载失败，请稍后再试！');
+        });
+}
+
+// 今日每日一图
+function todayDailyImage() {
+    fetch('https://api.vvhan.com/api/bing?type=json')
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch today image');
+            return response.json();
+        })
+        .then(data => {
+            document.querySelector('.background').style.backgroundImage = `url(${data.data.url})`;
+            alert('已切换至今天每日一图！');
+        })
+        .catch(error => {
+            console.error('Error fetching today image:', error);
+            alert('加载失败，请稍后再试！');
         });
 }
 
@@ -107,5 +124,6 @@ window.onload = function () {
     fetchTimeFromAPI();
     fetchQuote();
     fetchImageDetails();
-    document.getElementById('refresh-image').addEventListener('click', refreshDailyImage);
+    document.getElementById('refresh-image').addEventListener('click', randomDailyImage);
+    document.getElementById('today-image').addEventListener('click', todayDailyImage);
 };

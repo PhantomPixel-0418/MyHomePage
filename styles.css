@@ -43,6 +43,20 @@ html {
     transition: opacity 0.3s ease-in-out;
 }
 
+/* 图片详情按钮 */
+.today-image {
+    position: absolute;
+    top: 10px;
+    left: 175px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
 #image-info {
     right: 10px;
 }
