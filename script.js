@@ -15,21 +15,30 @@ function fetchTimeFromAPI() {
         });
 }
 
+let timeUpdateInterval;
+
 function updateClock(currentTime) {
-    const hours = String(currentTime.getHours()).padStart(2, '0');
-    const minutes = String(currentTime.getMinutes()).padStart(2, '0');
-    const seconds = String(currentTime.getSeconds()).padStart(2, '0');
-    const dateString = currentTime.toLocaleDateString('zh-CN', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        weekday: 'long'
-    });
+    clearInterval(timeUpdateInterval); // 清除之前的定时器，避免重复更新
 
-    document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
-    document.getElementById('date').textContent = dateString;
+    function refreshTime() {
+        const hours = String(currentTime.getHours()).padStart(2, '0');
+        const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+        const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+        const dateString = currentTime.toLocaleDateString('zh-CN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long'
+        });
 
-    setTimeout(() => updateClock(new Date(currentTime.getTime() + 1000)), 1000);
+        document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
+        document.getElementById('date').textContent = dateString;
+
+        currentTime = new Date(currentTime.getTime() + 1000); // 增加1秒
+    }
+
+    refreshTime();
+    timeUpdateInterval = setInterval(refreshTime, 1000); // 设置新的定时器
 }
 
 // 名言更新逻辑
@@ -89,8 +98,8 @@ function fetchImageDetails() {
 
 // 更新时间按钮绑定点击事件
 document.getElementById('refresh-time').addEventListener('click', () => {
-    fetchTimeFromAPI(); // 调用时间 API 刷新时间
-    alert('时间已更新！'); // 提示用户时间已更新
+    fetchTimeFromAPI();
+    alert('时间已更新！');
 });
 
 // 初始化
