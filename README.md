@@ -35,8 +35,8 @@
 <details>
   <summary>Table of Languages</summary>
   <ol>
-    <li><a href="/README.md">中文</a></li>
-    <li><a href="/README_en.md">English</a></li>
+    <li><a href="/README_zh.md">中文</a></li>
+    <li><a href="/README.md">English</a></li>
   </ol>
 </details>
 
@@ -68,7 +68,7 @@ This is a project to showcase a personal homepage, aiming to provide a simple an
   - [ ] Bing Daily Image Information 
 - [x] Quotes
   - [x] Chinese Classic Poetry
-  - [ ] Inspirational English Quotes
+  - [x] Inspirational English Quotes
 - [x] Display Time
   - [x] Date
 - [ ] Weather Information

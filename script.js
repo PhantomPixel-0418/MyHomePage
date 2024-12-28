@@ -41,16 +41,26 @@ function updateClock(currentTime) {
     timeUpdateInterval = setInterval(refreshTime, 1000); // 设置新的定时器
 }
 
+let isChineseQuote = true;
+
 // 名言更新逻辑
 function fetchQuote() {
-    fetch('https://v1.jinrishici.com/all.json')
+    const url = isChineseQuote ? 'https://v1.jinrishici.com/all.json' : 'https://api.vvhan.com/api/dailyEnglish';
+    fetch(url)
         .then(response => {
             if (!response.ok) throw new Error('Failed to fetch quote');
             return response.json();
         })
         .then(data => {
-            document.getElementById('quote').textContent = data.content;
-            document.getElementById('quote-author').textContent = `——${data.author}《${data.origin}》`;
+            if (isChineseQuote) {
+                document.getElementById('quote').textContent = data.content;
+                document.getElementById('quote-author').textContent = `——${data.author}《${data.origin}》`;
+                document.getElementById('refresh-quote').style.display = 'block';
+            } else {
+                document.getElementById('quote').textContent = data.data.en;
+                document.getElementById('quote-author').textContent = data.data.zh;
+                document.getElementById('refresh-quote').style.display = 'none';
+            }
         })
         .catch(error => {
             console.error('Error fetching quote:', error);
@@ -117,6 +127,17 @@ function fetchImageDetails() {
 document.getElementById('refresh-time').addEventListener('click', () => {
     fetchTimeFromAPI();
     alert('时间已更新！');
+});
+
+document.getElementById('switch-quote').addEventListener('click', () => {
+    isChineseQuote = !isChineseQuote;
+    fetchQuote();
+    alert(`已切换至${isChineseQuote ? '中文古诗' : '励志英语'}！`);
+});
+
+document.getElementById('refresh-quote').addEventListener('click', () => {
+    fetchQuote();
+    alert('名言已更新！');
 });
 
 // 初始化

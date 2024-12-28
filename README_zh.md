@@ -32,8 +32,8 @@
 <details>
   <summary>语言</summary>
   <ol>
-    <li><a href="/README.md">中文</a></li>
-    <li><a href="/README_en.md">English</a></li>
+    <li><a href="/README_zh.md">中文</a></li>
+    <li><a href="/README.md">English</a></li>
   </ol>
 </details>
 
@@ -65,7 +65,7 @@
   - [ ] Bing 每日一图信息 
 - [x] 名言
   - [x] 中文古诗
-  - [ ] 励志英文
+  - [x] 励志英文
 - [x] 显示时间
   - [x] 日期
 - [ ] 天气信息
