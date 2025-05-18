@@ -20,7 +20,7 @@
   [![MIT License][license-shield]][license-url]
 
   <p align="center">
-    <a href="https://phantompixel.pages.dev"><strong>Explore the site »</strong></a>
+    <a href="https://phantompixel-0418.github.io/MyHomePage/"><strong>Explore the site »</strong></a>
     <br />
         <a href="https://github.com/PhantomPixel-0418/MyHomePage/issues/new?assignees=PhantomPixel-0418&labels=bug%2C+unallocated&projects=&template=bug_report.md&title=%5BBug%5D+">Report Bug</a>
     ·

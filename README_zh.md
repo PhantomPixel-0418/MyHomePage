@@ -20,7 +20,7 @@
   [![MIT 许可证][许可证包庇]][许可证网址]
 
   <p align="center">
-    <a href="https://phantompixel.pages.dev"><strong>前往查看 »</strong></a>
+    <a href="https://phantompixel-0418.github.io/MyHomePage/"><strong>前往查看 »</strong></a>
     <br />
         <a href="https://github.com/PhantomPixel-0418/MyHomePage/issues/new?assignees=PhantomPixel-0418&labels=bug%2C+unallocated&projects=&template=%E6%8A%A5%E5%91%8A-bug.md&title=%5BBug%5D+">报告错误</a>
     ·
