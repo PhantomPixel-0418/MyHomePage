@@ -26,7 +26,7 @@ This refactor addresses previous pain points including outdated technology, diff
     -   **Robustness:** Added graceful fallbacks and CORS handling strategies.
 4.  **Customization:**
     -   Added a **Settings Panel**. You can now change your name, bio, quote source, and more directly in the UI.
-    -   Changes are persisted via `localStorage`.
+    -   Changes are persisted via `src/constants.ts`.
 5.  **Typography:**
     -   Integrated Google Fonts (`Inter`, `Noto Serif SC`, `JetBrains Mono`) for superior readability.
 
