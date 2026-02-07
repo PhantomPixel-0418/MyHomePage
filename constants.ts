@@ -14,8 +14,8 @@ export const USER_CONFIG = {
     email: 'linkium.workspace@gmail.com',
     github: 'https://github.com/Linkium-suki',
     customLinks: [
-        { label: '博客', url: '#' },
-        { label: '推特', url: '#' }
+        { label: 'Bilibili', url: 'https://space.bilibili.com/504202744' },
+        { label: '小学之泪', url: 'https://c2g.nullsoft.fun' }
     ]
   },
   projects: [
