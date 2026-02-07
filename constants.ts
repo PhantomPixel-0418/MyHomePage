@@ -9,7 +9,7 @@ import { AppSettings, Project, UserProfile } from './types';
 export const USER_CONFIG = {
   profile: {
     name: 'Linkium-suki',
-    bio: '前端工程师 | UI/UX 爱好者 | 开源贡献者。致力于打造像素级完美的数字体验，探索现代 Web 技术的无限可能。',
+    bio: 'Grade 7 Student | Full-Stack Developer | HAM Operator. 13 y-o👨‍💻. Coding with Love❤, Compiling with Magic✨.',
     avatar: 'https://avatars.githubusercontent.com/u/101039439?v=4',
     email: 'linkium.workspace@gmail.com',
     github: 'https://github.com/Linkium-suki',
