@@ -23,23 +23,9 @@ export const USER_CONFIG = {
       id: '1',
       name: 'Personal Dashboard Refactor',
       description: '基于 React, TypeScript 和 Tailwind 的现代化个人主页重构项目，支持动态主题色与 iOS 风格交互。',
-      url: 'https://github.com/Linkium-suki',
+      url: 'https://github.com/Linkium-suki/MyHomePage-Refactor',
       tags: ['React', 'TypeScript', 'UI/UX']
     },
-    {
-      id: '2',
-      name: 'Project Nebula',
-      description: '一个用于高性能数据渲染的实验性 WebGL 可视化库。',
-      url: '#',
-      tags: ['WebGL', 'Graphics']
-    },
-    {
-      id: '3',
-      name: 'Bing Wallpaper API',
-      description: '封装了 Bing 每日壁纸的无服务器 API 服务。',
-      url: '#',
-      tags: ['API', 'Node.js']
-    }
     // 其余以此类推
   ]
 };
@@ -51,7 +37,7 @@ export const USER_CONFIG = {
 export const DEFAULT_SETTINGS: AppSettings = {
   quoteSource: 'chinese',
   useBingDaily: true,
-  themeColor: '#3b82f6', // 默认颜色，会被动态覆盖
+  themeColor: '#39c5bb', // 默认颜色，会被动态覆盖
 };
 
 export const API_ENDPOINTS = {
