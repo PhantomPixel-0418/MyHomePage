@@ -23,14 +23,6 @@
 
 > Note: This project was refactored (see PR branch) to modernize the stack — React 18 + TypeScript + Vite.
 
-<details>
-  <summary>Languages / 语言</summary>
-  <ol>
-    <li><a href="/README_zh.md">中文</a></li>
-    <li><a href="/README.md">English</a></li>
-  </ol>
-</details>
-
 ## About
 
 MyHomePage is a lightweight personal homepage/dashboard that focuses on minimalism and visual polish. It displays a daily background image (Bing), rotating quotes (Chinese classic poetry and English inspirational quotes), and useful widgets like a clock and a configurable bottom-sheet dashboard.
@@ -77,9 +69,9 @@ This project is optimized for static hosting (GitHub Pages / Cloudflare Pages). 
 
 The project relies on a few third-party resources and APIs:
 
-- World Time API — <http://worldtimeapi.org/api/ip> (initial time accuracy)
-- Today's Poetry (Jinrishici) — <https://v1.jinrishici.com/all.json> (Chinese poetry)
-- TimelessQ — English daily quotes
+- World Time API — <http://worldtimeapi.org> (initial time accuracy)
+- Hitokoto — <https://hitokoto.cn/> (Chinese poetry)
+- TimelessQ — <https://api.timelessq.com> (English daily quotes)
 - Bing Wallpaper / Bing image sources (various public endpoints)
 
 Fonts and assets referenced in the original project:
@@ -94,7 +86,7 @@ Contributions, issues and feature requests are welcome. Feel free to check issue
 
 ## License
 
-Distributed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Distributed under the Apache-2.0 License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
