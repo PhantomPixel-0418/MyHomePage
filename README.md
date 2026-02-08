@@ -18,12 +18,7 @@
   [![MIT License][license-shield]][license-url]
 
   <p align="center">
-    <a href="https://phantompixel-0418.github.io/MyHomePage/"><strong>Explore the site »</strong></a>
-    <br />
-    <a href="https://github.com/PhantomPixel-0418/MyHomePage/issues/new?assignees=PhantomPixel-0418&labels=bug%2C+unallocated&projects=&template=bug_report.md&title=%5BBug%5D+">Report Bug</a>
-    ·
-    <a href="https://github.com/PhantomPixel-0418/MyHomePage/issues/new?assignees=PhantomPixel-0418&labels=enhancement%2C+unallocated&projects=&template=feature_request.md&title=%5BFeat%5D+">Request Feature</a>
-  </p>
+    <a href="https://phantompixel-0418-myhomepage.pages.dev/"><strong>Explore the site »</strong></a>
 </div>
 
 > Note: This project was refactored (see PR branch) to modernize the stack — React 18 + TypeScript + Vite.
