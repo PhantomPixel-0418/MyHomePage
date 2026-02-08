@@ -8,25 +8,37 @@ import { AppSettings, Project, UserProfile } from './types';
 
 export const USER_CONFIG = {
   profile: {
-    name: 'Linkium-suki',
-    bio: 'Grade 7 Student | Full-Stack Developer | HAM Operator. 13 y-o👨‍💻. Coding with Love❤, Compiling with Magic✨.',
-    avatar: 'https://avatars.githubusercontent.com/u/101039439?v=4',
-    email: 'linkium.workspace@gmail.com',
-    github: 'https://github.com/Linkium-suki',
-    customLinks: [
-        { label: 'Bilibili', url: 'https://space.bilibili.com/504202744' },
-        { label: '小学之泪', url: 'https://c2g.nullsoft.fun' }
-    ]
+    name: 'PhantomPixel-0418',
+    bio: 'Hi, I\'m a middle school student in eighth grade, and I\'m 13 years old.',
+    avatar: 'https://avatars.githubusercontent.com/u/158539001',
+    email: 'PhantomPixel-0418@outlook.com',
+    github: 'https://github.com/PhantomPixel-0418',
+    // customLinks: [
+    //   { label: '', url: '' }
+    // ]
   },
   projects: [
     {
       id: '1',
-      name: 'Personal Dashboard Refactor',
-      description: '基于 React, TypeScript 和 Tailwind 的现代化个人主页重构项目，支持动态主题色与 iOS 风格交互。',
-      url: 'https://github.com/Linkium-suki/MyHomePage-Refactor',
-      tags: ['React', 'TypeScript', 'UI/UX']
+      name: 'MyHomePage',
+      description: '这是一个用于展示个人主页的项目，旨在提供简单而美观的网页布局。通过整合 Bing 每日壁纸、经典诗词、时钟以及一些自定义功能，本网页旨在提供每日一图、一言，提升用户体验。',
+      url: 'https://github.com/PhantomPixel-0418/MyHomePage',
+      tags: ['React', 'TypeScript', 'UI/UX', 'bing-image', 'quote-api']
     },
-    // 其余以此类推
+    {
+      id: '2',
+      name: 'ybtCode',
+      description: '用于存放我在“信息学奥赛一本通”上的代码',
+      url: 'https://github.com/PhantomPixel-0418/ybtCode',
+      tags: ['cpp', 'ssoier', 'ybt']
+    },
+    {
+      id: '3',
+      name: 'ybt-copy-helper',
+      description: '一个专为信息学奥赛一本通在线评测系统（ybt.ssoier.cn:8088）开发的浏览器扩展，用于快速复制题目的输入/输出样例。',
+      url: 'https://github.com/PhantomPixel-0418/ybt-copy-helper',
+      tags: ['copy', 'tool', 'ssoier', 'fast-copy-tool']
+    },
   ]
 };
 

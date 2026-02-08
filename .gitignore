@@ -1,0 +1,44 @@
+# Node
+node_modules/
+
+# Vite / build
+dist/
+build/
+.vite/
+
+# Environment
+.env
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc caches
+.cache/
+.cache-loader/
+.eslintcache
+
+# Generated assets
+coverage/
+
+# Local overrides
+/local.env
+
+# Optional: lockfiles (usually committed) - uncomment if you don't want to track
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

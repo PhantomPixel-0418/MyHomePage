@@ -12,8 +12,8 @@ const Quote: React.FC = () => {
   const loadQuote = async () => {
     setLoading(true);
     try {
-      const data = settings.quoteSource === 'chinese' 
-        ? await fetchChineseQuote() 
+      const data = settings.quoteSource === 'chinese'
+        ? await fetchChineseQuote()
         : await fetchEnglishQuote();
       setQuote(data);
     } catch (error) {
@@ -26,10 +26,12 @@ const Quote: React.FC = () => {
 
   useEffect(() => {
     loadQuote();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [settings.quoteSource]);
 
   if (!quote) return null;
+
+  const isEnglish = settings.quoteSource === 'english';
 
   return (
     <div className="group relative max-w-2xl mx-auto text-center px-6 py-8 transition-all duration-300">
@@ -37,13 +39,24 @@ const Quote: React.FC = () => {
         <p className="text-xl md:text-2xl font-serif font-medium leading-relaxed drop-shadow-lg text-white/90 tracking-wide">
           “{quote.content}”
         </p>
-        <div className="mt-5 flex items-center justify-center gap-3 text-white/70 font-sans text-sm tracking-widest uppercase">
-          <span className="font-semibold">— {quote.author}</span>
-          {quote.source && <span className="opacity-60 px-2 py-0.5 rounded-full bg-white/10 text-[10px]">《{quote.source}》</span>}
+        <div className="mt-5 flex flex-col items-center justify-center gap-1 text-white/70 font-sans text-sm tracking-widest uppercase">
+          {isEnglish ? (
+            <>
+              {quote.source && <span className="font-medium normal-case text-[13px]">“{quote.source}”</span>}
+              <span className="mt-1 font-semibold normal-case">—— {quote.author}</span>
+            </>
+          ) : (
+            <>
+              <div className="flex items-center gap-3">
+                <span className="font-semibold">— {quote.author}</span>
+                {quote.source && <span className="opacity-60 px-2 py-0.5 rounded-full bg-white/10 text-[10px]">《{quote.source}》</span>}
+              </div>
+            </>
+          )}
         </div>
       </div>
-      
-      <button 
+
+      <button
         onClick={loadQuote}
         disabled={loading}
         className="absolute -right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-all hover:bg-white/20 hover:scale-110 active:scale-90 backdrop-blur-md"
