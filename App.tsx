@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { USER_CONFIG } from './constants';
 import { SettingsProvider, useSettings } from './context/SettingsContext';
 import { fetchBingImage } from './services/api';
 import { extractDominantColor } from './utils/color';
