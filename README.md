@@ -2,9 +2,6 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/PhantomPixel-0418/MyHomePage">
-    <img src="images/logo.svg" alt="Logo" width="80" height="80">
-  </a>
 
 <h3 align="center">MyHomePage</h3>
 
@@ -93,7 +90,6 @@ The project relies on a few third-party resources and APIs:
 Fonts and assets referenced in the original project:
 
 - Google fonts: `Inter`, `Noto Serif SC`, `JetBrains Mono`
-- HarmonyOS iconography (used as inspiration)
 
 Thanks to open-source projects and API providers that made this possible.
 
