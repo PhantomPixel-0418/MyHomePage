@@ -19,7 +19,7 @@ const AppContent: React.FC = () => {
 
   useEffect(() => {
     const initBackground = async () => {
-      document.title = `${USER_CONFIG.name} | Personal Dashboard`;
+      document.title = `${USER_CONFIG.profile.name} | Personal Dashboard`;
       let url = 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?auto=format&fit=crop&w=2000&q=80'; // Fallback
       
       if (settings.useBingDaily) {
