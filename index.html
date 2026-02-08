@@ -1,70 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页</title>
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Dashboard</title>
+    <!-- Google Fonts: Inter for UI, Noto Serif SC for quotes/Chinese, JetBrains Mono for code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['"Noto Serif SC"', 'serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+              'slide-up': 'slideUp 0.5s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-
-<body>
-    <div class="background">
-        <!-- 图片详情按钮 -->
-        <div id="image-info" class="image-info hidden">
-            <img src="images/picture_2.svg" alt="图片图标">
-            <span>图片详情</span>
-        </div>
-
-        <!-- 每日一图刷新按钮 -->
-        <div id="refresh-image" class="image-info">
-            <img src="images/arrow_clockwise.svg" alt="随机每日一图">
-            <span>随机每日一图</span>
-        </div>
-
-        <div id="today-image" class="today-image">
-            <img src="images/position.svg" alt="回到今天每日一图">
-            <span>回到今天每日一图</span>
-        </div>
-
-        <!-- 时间与名言 -->
-        <div class="info-container">
-            <div class="time-box">
-                <div class="time-icon">
-                    <img src="images/calendar_badge_clock.svg" alt="时间图标">
-                </div>
-                <div class="time-info">
-                    <div class="label" id="time-label">当前时间</div>
-                    <div id="time">加载中...</div>
-                    <div id="date"></div>
-                    <!-- 更新时间按钮 -->
-                    <div id="refresh-time" class="refresh-icon">
-                        <img src="images/arrow_clockwise.svg" alt="更新时间">
-                    </div>
-                </div>
-            </div>
-
-            <div class="quote-box">
-                <div class="quote-icon">
-                    <img src="images/book_pages_fill_1.svg" alt="名言图标">
-                </div>
-                <div class="quote-info">
-                    <div class="label" id="quote-label">名言名句</div>
-                    <div id="quote">名言加载中...</div>
-                    <div id="quote-author"></div>
-                    <!-- 切换按钮 -->
-                    <div id="switch-quote" class="switch-icon">
-                        <img src="images/transfer_station.svg" alt="切换名言">
-                    </div>
-                    <!-- 刷新按钮 -->
-                    <div id="refresh-quote" class="refresh-icon">
-                        <img src="images/arrow_clockwise.svg" alt="刷新名言">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  <body class="bg-gray-100 dark:bg-black text-gray-900 dark:text-white antialiased overflow-hidden selection:bg-blue-500/30 selection:text-current">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
-
 </html>

@@ -1,6 +1,5 @@
 <a id="readme-top"></a>
 
-<!-- 项目 LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/PhantomPixel-0418/MyHomePage">
@@ -10,7 +9,9 @@
 <h3 align="center">MyHomePage</h3>
 
   <p align="center">
-    My personal homepage<br /><br />This is a project to showcase a personal homepage, aiming to provide a simple and beautiful web layout. By integrating Bing daily wallpaper, classic poetry, clock, and some custom features, this webpage aims to provide a daily image and quote to enhance user experience.
+    A modern, minimal personal homepage/dashboard.
+    <br /><br />
+    Integrates Bing daily wallpaper, curated quotes (Chinese & English), a clock, and a customizable settings panel to present a clean daily dashboard.
   </p>
 
   [![Contributors][contributors-shield]][contributors-url]
@@ -22,127 +23,91 @@
   <p align="center">
     <a href="https://phantompixel-0418.github.io/MyHomePage/"><strong>Explore the site »</strong></a>
     <br />
-        <a href="https://github.com/PhantomPixel-0418/MyHomePage/issues/new?assignees=PhantomPixel-0418&labels=bug%2C+unallocated&projects=&template=bug_report.md&title=%5BBug%5D+">Report Bug</a>
+    <a href="https://github.com/PhantomPixel-0418/MyHomePage/issues/new?assignees=PhantomPixel-0418&labels=bug%2C+unallocated&projects=&template=bug_report.md&title=%5BBug%5D+">Report Bug</a>
     ·
     <a href="https://github.com/PhantomPixel-0418/MyHomePage/issues/new?assignees=PhantomPixel-0418&labels=enhancement%2C+unallocated&projects=&template=feature_request.md&title=%5BFeat%5D+">Request Feature</a>
   </p>
 </div>
 
-> [!CAUTION]
-> This README file is machine translated.
+> Note: This project was refactored (see PR branch) to modernize the stack — React 18 + TypeScript + Vite.
 
-<!-- 语言 -->
 <details>
-  <summary>Table of Languages</summary>
+  <summary>Languages / 语言</summary>
   <ol>
     <li><a href="/README_zh.md">中文</a></li>
     <li><a href="/README.md">English</a></li>
   </ol>
 </details>
 
-<!-- 目录 -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
+## About
 
-<!-- 关于项目 -->
-## About The Project
+MyHomePage is a lightweight personal homepage/dashboard that focuses on minimalism and visual polish. It displays a daily background image (Bing), rotating quotes (Chinese classic poetry and English inspirational quotes), and useful widgets like a clock and a configurable bottom-sheet dashboard.
 
-This is a project to showcase a personal homepage, aiming to provide a simple and beautiful web layout. By integrating Bing daily wallpaper, classic poetry, clock, and some custom features, this webpage aims to provide a daily image and quote to enhance user experience.
+This repository contains a complete rewrite to improve maintainability, customization, and UX.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Key Improvements (refactor)
 
-<!-- 路线图 -->
-## Roadmap
+- Modern tech: React 18 + TypeScript, Tailwind CSS, Vite
+- Dynamic "Monet" theming: accent colors adapt to the daily background image
+- Glassmorphism bottom-sheet dashboard with tabbed About / Projects
+- Quotes: integrated Hitokoto (Chinese) and TimelessQ (English) with graceful fallbacks
+- Settings panel: change quote source, theme color, and other preferences (persisted to localStorage)
+- Improved typography: `Inter`, `Noto Serif SC`, `JetBrains Mono`
 
-- [x] Bing Daily Image
-  - [x] Random Bing Daily Image
-  - [ ] Bing Daily Image Information 
-- [x] Quotes
-  - [x] Chinese Classic Poetry
-  - [x] Inspirational English Quotes
-- [x] Display Time
-  - [x] Date
-- [ ] Weather Information
-  - [ ] Climate Tips
+## Roadmap / Features
 
-See the [open issues](https://github.com/PhantomPixel-0418/MyHomePage/issues) for a full list of proposed features (and known issues).
+- Bing Daily Image (high-res background with metadata)
+- Quotes: Chinese classic poetry & English inspirational quotes
+- Clock & date display
+- Settings panel (customize name, bio, theme, quote source)
+- Planned: Weather information and climate tips
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+See the repository issues for proposed features and known issues: <https://github.com/PhantomPixel-0418/MyHomePage/issues>
 
-<!-- 许可证 -->
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server with Vite
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Deployment
+
+This project is optimized for static hosting (GitHub Pages / Cloudflare Pages). Build with `npm run build` and serve the `dist` folder.
+
+## API & Acknowledgements
+
+The project relies on a few third-party resources and APIs:
+
+- World Time API — <http://worldtimeapi.org/api/ip> (initial time accuracy)
+- Today's Poetry (Jinrishici) — <https://v1.jinrishici.com/all.json> (Chinese poetry)
+- TimelessQ — English daily quotes
+- Bing Wallpaper / Bing image sources (various public endpoints)
+
+Fonts and assets referenced in the original project:
+
+- Google fonts: `Inter`, `Noto Serif SC`, `JetBrains Mono`
+- HarmonyOS iconography (used as inspiration)
+
+Thanks to open-source projects and API providers that made this possible.
+
+## Contributing
+
+Contributions, issues and feature requests are welcome. Feel free to check issues and open a PR.
+
 ## License
 
-Distributed under the MIT License. See [`LICENSE.txt`](LICENSE) for more information.
+Distributed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- 致谢 -->
-### Acknowledgements
-
-Here is a list of resources and APIs used in the webpage:
-
-#### SVG Image Source
-- **HarmonyOS Theme Icon Library**: `https://developer.huawei.com/consumer/cn/design/harmonyos-symbol/HarmonyOS`
-  Description: Icon materials provided by Huawei Developer Alliance, designed with simplicity and modernity, suitable for web decoration and function indication.
-
-#### API
-
-1. **World Time API**
-- API URL: `http://worldtimeapi.org/api/ip`  
-  Description: This API obtains the current time and time zone information based on the user's IP address to ensure time accuracy.  
-  Usage: Get accurate initial time when the page loads, then update locally every second.
-  
-2. **Today's Poetry API**
-- API URL: `https://v1.jinrishici.com/all.json`  
-  Description: Provides random classic poetry quotes, including author and source.  
-  Usage: Display daily quotes on the webpage as motivational sentences.
-
-3. **Bing Wallpaper API**
-- API URL: `https://api.vvhan.com/article/bing.html`  
-  Description: This API provides daily Bing wallpapers and their details, including title and date.  
-  Usage: Dynamically display webpage background images and provide related descriptions.
-
-#### Font Sources
-
-1. **Rousseau Deco**  
-   Description: User-specified artistic font for displaying time, enhancing the visual appeal of the webpage.
-   
-2. **Alimama DongFang DaKai Regular**  
-   Description: User-specified font for displaying quotes, with a simple style that conveys an elegant atmosphere.
-   
-3. **HarmonyOS Sans**  
-   Description: Default font for the webpage, maintaining overall style consistency, provided by Huawei Developer Alliance.  
-   Source: https://developer.huawei.com/images/download/next/HarmonyOS-Sans.zip
-
-#### Websites
-
-1. **Web Analytics**  
-   Description: Used for website traffic statistics and user behavior analysis.  
-   Source: Cloudflare
-   
-3. **Deployment**  
-   Description: Deploy the website.  
-   Source: Cloudflare
-
-#### README
-
-1. **Best-README-Template**
-   Description: Used to make it easier to write README files.  
-   Source: https://github.com/othneildrew/Best-README-Template  
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- 标记链接和图像 -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/PhantomPixel-0418/MyHomePage.svg
 [contributors-url]: https://github.com/PhantomPixel-0418/MyHomePage/graphs/contributors
